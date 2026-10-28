@@ -11,7 +11,7 @@ public class Diapositiva14 {
 		 */
 		
 		Scanner scanner = new Scanner(System.in);
-		int numero;
+		int numero = 0;
 		
 		do {
 			System.out.println("Dime un número (1-10): ");
@@ -20,7 +20,7 @@ public class Diapositiva14 {
 		while(numero < 1 || numero > 10);
 		
 		
-		
+		scanner.close();
 
 	}
 
