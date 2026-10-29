@@ -45,11 +45,6 @@ public class Diapositiva18 {
 		}
 		while(aleatorio1+aleatorio2 == resultado);
 		
-		
-		
-		
-		
-
 	}
 
 }
