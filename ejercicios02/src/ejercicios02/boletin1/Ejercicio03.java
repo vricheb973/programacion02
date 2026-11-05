@@ -3,6 +3,8 @@ package ejercicios02.boletin1;
 import java.util.Scanner;
 
 public class Ejercicio03 {
+	
+	
 
 	public static void main(String[] args) {
 
@@ -50,5 +52,8 @@ public class Ejercicio03 {
 		sc.close();
 		
 	}
+	
+	
+	
 
 }
