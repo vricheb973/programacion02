@@ -1,6 +1,6 @@
-package ejercicios02.boletin2;
+package ejercicios02.boletin3;
 
-public class Ejercicio02 {
+public class Boletin3Recursivo {
 
 	public static void main(String[] args) {
 

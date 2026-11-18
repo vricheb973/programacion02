@@ -8,7 +8,7 @@ public class Sobrecarga {
 	}
 	
 	
-	// Solo se puede sobrecargar (sobrecargar = tener dos o más funciones con el mismo nombre
+	// Solo se puede sobrecargar (sobrecargar = tener dos o más funciones con el mismo nombre)
 	// una función modificando los parámetros
 	// - Distinta cantidad de parámetros
 	// - Distinto tipo de parámetros (int, double, boolean, etc).

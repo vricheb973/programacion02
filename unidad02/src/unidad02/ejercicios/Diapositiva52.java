@@ -5,11 +5,18 @@ import java.util.Scanner;
 public class Diapositiva52 {
 
 	public static void main(String[] args) {
+		
+		int a = dameUno();
 
-		int numero = pedirNumeroMayorDevolviendo(3, pedirNumeroMayorDevolviendo(0, 0));
+		int numero = pedirNumeroMayorDevolviendo(a, dameUno());
 		
 		System.out.println(pedirNumeroMayorDevolviendo(3, 6));
 
+	}
+	
+	public static int dameUno() {
+		int a = 1;
+		return a;
 	}
 	
 	public static void pedirNumeroMayor(int min, int max){
