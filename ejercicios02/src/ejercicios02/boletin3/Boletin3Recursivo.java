@@ -24,5 +24,15 @@ public class Boletin3Recursivo {
 		
 		return fibonacci(n-1) + fibonacci(n-2);
 	}
+	
+	public static int factorial(int n) {
+		//caso base
+		if(n == 1) {
+			return 1;
+		}
+		
+		//caso recursivo
+		return n * factorial(n-1);
+	}
 
 }
