@@ -9,8 +9,91 @@ public class Boletin4 {
 
 	public static void main(String[] args) {
 
-		System.out.println(validadorPassword("aaAA12@@"));
+		adivinaNumero();
 		
+	}
+	
+	public static void adivinaNumero() {
+		Scanner sc = new Scanner(System.in);
+		Random r = new Random();
+
+		int inicio = 1;
+		int fin = 100;
+
+		int aleatorio = r.nextInt(inicio, fin+1);
+		
+		int intentos = 10;
+		int numero;
+		
+		do {
+			System.out.println("Dime el número a adivinar");
+			numero = sc.nextInt();
+			
+			intentos--;
+			
+			if(numero > aleatorio) {
+				System.out.println("El número es menor.");
+				System.out.printf("Te quedan %d intentos \n", intentos);
+			}
+			else if(numero < aleatorio) {
+				System.out.println("El número es mayor.");
+				System.out.printf("Te quedan %d intentos \n", intentos);
+			}
+			else {
+				System.out.println("Has acertado!!");
+				System.out.printf("Lo has acertado en %d intentos. \n", 10-intentos);
+			}
+			
+		}
+		while(numero != aleatorio && intentos > 0);	
+		
+		if(intentos == 0) {
+			System.out.println("Has agotado todos los intentos.");
+			System.out.printf("El número era %d. \n", aleatorio);
+		}
+		
+	}
+	
+	public static String validadorPassword(String password) {
+		Scanner sc = new Scanner(System.in);
+		
+		boolean valida = false;
+		
+		do {
+			int mayus = 0;
+			int minus = 0;
+			int numeros = 0;
+			int especiales = 0;
+			
+			for(int i=0; i<password.length(); i++) {
+				String c = password.substring(i, i+1);
+				
+				if(c.matches("[a-z]")) {
+					minus++;
+				}
+				else if(c.matches("[A-Z]")) {
+					mayus++;
+				}
+				else if(c.matches("[0-9]")) {
+					numeros++;
+				}
+				else if(c.matches("[@#*%&/]")) {
+					especiales++;
+				}
+			}
+			
+			if(mayus > 1 && minus > 1 && numeros > 1 && especiales > 1 && password.length() >= 10) {
+				valida = true;
+			}
+			else {
+				System.out.println("VUELVE A INTENTARLO.");
+				System.out.println("Introduzca de nuevo la password: ");
+				password = sc.next();
+			}
+		}
+		while(!valida);
+		
+		return password;
 	}
 
 	public static void elGranDerbi() {
@@ -94,47 +177,7 @@ public class Boletin4 {
 		return palitos;
 	}
 	
-	public static String validadorPassword(String password) {
-		Scanner sc = new Scanner(System.in);
-		
-		boolean valida = false;
-		
-		do {
-			int mayus = 0;
-			int minus = 0;
-			int numeros = 0;
-			int especiales = 0;
-			
-			for(int i=0; i<password.length(); i++) {
-				String c = password.substring(i, i+1);
-				
-				if(c.matches("[a-z]")) {
-					minus++;
-				}
-				else if(c.matches("[A-Z]")) {
-					mayus++;
-				}
-				else if(c.matches("[0-9]")) {
-					numeros++;
-				}
-				else if(c.matches("[@#*%&/]")) {
-					especiales++;
-				}
-			}
-			
-			if(mayus > 1 && minus > 1 && numeros > 1 && especiales > 1 && password.length() >= 10) {
-				valida = true;
-			}
-			else {
-				System.out.println("VUELVE A INTENTARLO.");
-				System.out.println("Introduzca de nuevo la password: ");
-				password = sc.next();
-			}
-		}
-		while(!valida);
-		
-		return password;
-	}
+	
 	
 	
 	
